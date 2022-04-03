@@ -1,0 +1,31 @@
+Para correr la búsqueda genética:
+
+- Setear primera población y la cantidad de generaciones a formar en genetic_search.cpp
+
+- Compilar:
+
+	g++ -o genetic genetic_search.cpp defines.cpp our_referee.cpp generation.cpp
+
+- Poner a correr con ./genetic >> inserte_nombre_declarativo_aqui.txt
+
+- Pasarle los parámetros en el siguiente orden:
+
+	- n
+
+	- m
+
+	- c
+
+	- fitness: 	 0 free for all (todos contra todos)
+			   	 1 tournament (fixture con grupitos de 4)
+
+	- crossover: 0 equal crossover (50% chance de una u otra caracteristica)
+				 1 mean crossover (promedio con peso random)
+				 2 favourite parent crossover (seteo al principio una probabilidad random con la q decido que parent elijo)
+
+	- mutation:  0 5% mutation rate
+				 1 10% mutation rate
+
+	- selection  0 feudal monogamic selection (elijo dos primeros y los mejores forman parejas)
+				 1 feudal roman selection (elijo dos primeros y los mejores procrean randomly entre si)
+				 2 elite selection (los mejores cuatro de clonan y se reproducen de todas las formas posibles solo ellos) -only available for 16-
